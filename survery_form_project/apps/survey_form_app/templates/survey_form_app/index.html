@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge"></meta>
+    <title>Dojo Survey Index</title>
+    <style>
+        form select{
+            display: block;
+        }
+        #dojo{
+            width: 50%;
+            border: black solid 2px;
+            text-align: center;
+            margin: auto;
+            
+        }
+        #dojo select{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        textarea{
+            width: 25%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #submit{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body> 
+    <div id="dojo">
+        <form action='/process' method='post'>
+            {% csrf_token %}
+            Your Name: <input type='text' name='name'>
+            Dojo Location: 
+            <select name='location'>
+                <option value='San Jose'>San Jose</option>
+                <option value='Seattle'>Seattle</option>
+            </select>
+            Favorite language: 
+            <select name='language'>
+                <option value='Python'>Python</option>
+                <option value='Javascript'>Javascript</option>
+            </select>
+            Comment(optional): <textarea name='comment'></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
