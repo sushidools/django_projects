@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>User {{ user.id }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge"></meta>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">    <title>Home</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Hello User {{ user.id }}</h1>
+        <table class="table col-md-4">
+            <tbody>
+                <tr>
+                    <td scope="row">Full Name:</td>
+                    <td>{{ user.first_name}} {{ user.last_name }}</td>
+                </tr>
+                <tr>
+                    <td scope="row">Email:</td>
+                    <td>{{ user.email }}</td>
+                </tr>
+                <tr>
+                    <td scope="row">Age:</td>
+                    <td>{{ user.age}}</td>
+                </tr>
+                <tr>
+                    <td scope="row">Created At:</td>
+                    <td>{{ user.created_at }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <a name="" id="" class="btn btn-link" href="/users/{{ user.id }}/edit" role="button">Edit</a> | <a name="delete" id="delete" class="btn btn-link" href="/users/{{ user.id }}/destroy" role="button">Delete</a> | <a name="" id="" class="btn btn-link" href="/new" role="button">Add a new user</a> | <a name="main" id="main" class="btn btn-link" href="/" role="button">Go Back</a>
+    </div>
+</body>
+</html>
