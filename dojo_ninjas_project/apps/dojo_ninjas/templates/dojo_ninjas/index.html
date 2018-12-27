@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dojos and Ninjas</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge"></meta>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">    
+    <style>
+        p{
+            font-size: 14px;
+            font-family:cursive;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dojos</h1>
+        <ul>
+            {% for dojo in dojos %}
+            <li> {{ dojo.name }}
+                <p> {{ dojo.desc }}</p>
+                <ul>
+                    <h6> The Ninjas </h6>
+                    {% for ninja in dojo.ninjas.all %}
+                    <li><em>{{ ninja.first_name }} {{ ninja.last_name }}</em></li>
+                    {% endfor %}
+                </ul>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
