@@ -18,4 +18,5 @@ from django.conf.urls import url, include
 urlpatterns = [
     url(r'^', include('apps.dojo_ninjas.urls')),
     url(r'^books/', include('apps.book_authors.urls')),
+    url(r'^likes_books/', include('apps.likes_books.urls')),
 ]
